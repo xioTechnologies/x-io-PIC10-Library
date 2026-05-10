@@ -4,6 +4,9 @@
  * @brief Delay for PIC10 devices using sleep and watchdog timer.
  */
 
+#ifndef DELAY_H
+#define DELAY_H
+
 //------------------------------------------------------------------------------
 // Definitions
 
@@ -36,6 +39,8 @@ typedef enum {
 // Function declarations
 
 void Delay(const DelayPeriod period);
+
+#endif
 
 //------------------------------------------------------------------------------
 // End of file
