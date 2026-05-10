@@ -1,7 +1,7 @@
 /**
  * @file UartTX.h
  * @author Seb Madgwick
- * @brief UART transmission for PIC10 devices.  Fixed at 115200 baud for 16 MHz.
+ * @brief UART transmission for PIC10 devices.
  */
 
 #ifndef UART_TX_H

@@ -2,6 +2,9 @@
 
 uartPin equ 1 ;LATA1
 
+;baudDelay equ 135 ;9600 baud for 16 MHz
+baudDelay equ 8 ;115200 baud for 16 MHz
+
 global _uartData
 global _uartCounter
 global _uartDelay
@@ -14,7 +17,7 @@ _UartTX:
     movwf _uartData
     movlw 10 ;1 start bit, 8 data bits, 1 stop bit
     movwf _uartCounter
-    bcf LATA, uartPin // start bit
+    bcf LATA, uartPin ;start bit
     goto delay
 
 nextBit:
@@ -27,7 +30,7 @@ nextBit:
     rrf _uartData
 
 delay:
-    movlw 8 ;delay 26 cycles
+    movlw baudDelay ;total delay between edges = (3 * baudDelay) + 11
     movwf _uartDelay
 delayLoop:
     decfsz _uartDelay
