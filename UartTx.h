@@ -1,5 +1,5 @@
 /**
- * @file UartTX.h
+ * @file UartTx.h
  * @author Seb Madgwick
  * @brief UART transmission for PIC10 devices.
  */
@@ -15,8 +15,8 @@
 //------------------------------------------------------------------------------
 // Function declarations
 
-void UartTXByte(const uint8_t byte);
-void UartTXString(const char* string);
+void UartTxByte(const uint8_t byte);
+void UartTxString(const char* string);
 
 #endif
 

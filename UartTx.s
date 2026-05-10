@@ -1,7 +1,7 @@
 #include <xc.inc>
 
 uartPin equ 1 ;LATA1
-
+ 
 ;baudDelay equ 135 ;9600 baud for 16 MHz
 baudDelay equ 8 ;115200 baud for 16 MHz
 
@@ -9,11 +9,11 @@ global _uartData
 global _uartCounter
 global _uartDelay
 
-psect UartTX, local, class=CODE, delta=2
+psect UartTx, local, class=CODE, delta=2
 
-global _UartTX
+global _UartTx
 
-_UartTX:
+_UartTx:
     movwf _uartData
     movlw 10 ;1 start bit, 8 data bits, 1 stop bit
     movwf _uartCounter

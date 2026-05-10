@@ -1,5 +1,5 @@
 /**
- * @file UartTX.c
+ * @file UartTx.c
  * @author Seb Madgwick
  * @brief UART transmission for PIC10 devices.
  */
@@ -7,12 +7,12 @@
 //------------------------------------------------------------------------------
 // Includes
 
-#include "UartTX.h"
+#include "UartTx.h"
 
 //------------------------------------------------------------------------------
 // Function declarations
 
-void UartTX(void);
+void UartTx(void);
 
 //------------------------------------------------------------------------------
 // Variables
@@ -28,18 +28,18 @@ static volatile uint8_t uartDelay;
  * @brief Transmits byte.
  * @param byte Byte.
  */
-void UartTXByte(const uint8_t byte) {
+void UartTxByte(const uint8_t byte) {
     uartData = byte;
-    UartTX();
+    UartTx();
 }
 
 /**
  * @brief Transmits string.
  * @param string String.
  */
-void UartTXString(const char* string) {
+void UartTxString(const char* string) {
     while (*string != '\0') {
-        UartTXByte(*string++);
+        UartTxByte(*string++);
     }
 }
 
